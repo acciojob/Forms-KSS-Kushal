@@ -18,8 +18,8 @@ const App = () => {
         <Routes>            
           <Route path="/" element={<Card />} />
           <Route path="/form" element={<Form />} />
-          <Route path="/formRef" element={<FormRef />} />
-          <Route path="/formState" element={<FormState />} />
+          <Route path="/form-ref" element={<FormRef />} />
+          <Route path="/form-state" element={<FormState />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
