@@ -15,7 +15,6 @@ const FormState = () => {
             <input type="password" id="password_confirmation" placeholder='Password Confirmation' />
             <button type='submit' onClick={()=>navigate('/form-ref')}>Submit</button>
         </form>
-        <div id="full_name"></div>
     </div>
   )
 }
