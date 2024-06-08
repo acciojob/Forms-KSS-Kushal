@@ -4,6 +4,7 @@ import Form from "./Form";
 import FormRef from "./FormRef";
 import FormState from "./FormState";
 import { Fragment } from "react";
+import Card from "./Card";
 
 const App = () => {
   return (
@@ -12,11 +13,10 @@ const App = () => {
         Now I can render any React component on any DOM node I want using
         ReactDOM.render
       </p>
-      <Link id="form-link" to={'/form'}>form</Link>
-      <Link id="form-ref-link" to={'/formRef'}>formRef</Link>
-      <Link id="form-state-link" to={'/formState'}>formState</Link>
+      
       <BrowserRouter>
-        <Routes>
+        <Routes>            
+          <Route path="/" element={<Card />} />
           <Route path="/form" element={<Form />} />
           <Route path="/formRef" element={<FormRef />} />
           <Route path="/formState" element={<FormState />} />
