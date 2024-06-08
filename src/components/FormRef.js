@@ -1,22 +1,44 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useRef } from 'react';
 
 const FormRef = () => {
-    const navigate = useNavigate();
-  return (
-    <div >
-        <Link id="form-link" to={'/form'}>form</Link>
-      <Link id="form-ref-link" to={'/form-ref'}>formRef</Link>
-      <Link id="form-state-link" to={'/form-state'}>formState</Link>
-        <form id="info-form">
-            <input type="text" id="full_name" placeholder='Full Name' />
-            <input type="email" id="email" placeholder='Email'/>
-            <input type="password" id="password" placeholder='Password' />
-            <input type="password" id="password_confirmation" placeholder='Password Confirmation' />
-            <button type='submit' onClick={()=>navigate('/form-state')}>Submit</button>
-        </form>
-    </div>
-  )
-}
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const confirmPassRef = useRef();
 
-export default FormRef
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // Accessing the current value of the inputs
+    console.log(nameRef.current.value);
+    console.log(emailRef.current.value);
+    console.log(passwordRef.current.value);
+    console.log(confirmPassRef.current.value);
+
+    // Clearing the form inputs
+    nameRef.current.value = '';
+    emailRef.current.value = '';
+    passwordRef.current.value = '';
+    confirmPassRef.current.value = '';
+  };
+
+  return (
+    <form id="info-form" onSubmit={handleSubmit}>
+      <label htmlFor="full_name">Full Name:</label>
+      <input id="full_name" type="text" ref={nameRef} />
+
+      <label htmlFor="email">Email:</label>
+      <input id="email" type="email" ref={emailRef} />
+
+      <label htmlFor="password">Password:</label>
+      <input id="password" type="password" ref={passwordRef} />
+
+      <label htmlFor="password_confirmation">Confirm Password:</label>
+      <input id="password_confirmation" type="password" ref={confirmPassRef} />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default FormRef;

@@ -1,34 +1,31 @@
-import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import Form from "./Form";
-import FormRef from "./FormRef";
-import FormState from "./FormState";
-import { Fragment } from "react";
-import Card from "./Card";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// Import your form components
 
-const App = () => {
+function App() {
   return (
-    <Fragment>
+    <Router>
+      <nav>
+        <ul>
+          <li>
+            <Link id="form-link" to="/form">Form</Link>
+          </li>
+          <li>
+            <Link id="form-ref-link" to="/form-ref">Form Ref</Link>
+          </li>
+          <li>
+            <Link id="form-state-link" to="/form-state">Form State</Link>
+          </li>
+        </ul>
+      </nav>
       <p>
         Now I can render any React component on any DOM node I want using
         ReactDOM.render
       </p>
-      <form id="info-form">
-            <input type="text" id="full_name" placeholder='Full Name' />
-            <input type="email" id="email" placeholder='Email'/>
-            <input type="password" id="password" placeholder='Password' />
-            <input type="password" id="password_confirmation" placeholder='Password Confirmation' />
-        </form>
-      <BrowserRouter>
-        <Routes>            
-          <Route path="/" element={<Card />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/form-ref" element={<FormRef />} />
-          <Route path="/form-state" element={<FormState />} />
-        </Routes>
-      </BrowserRouter>
-    </Fragment>
+      <Route path="/form" component={Form} />
+      <Route path="/form-ref" component={FormRef} />
+      <Route path="/form-state" component={FormState} />
+    </Router>
   );
-};
+}
 
 export default App;

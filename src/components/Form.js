@@ -1,22 +1,23 @@
-import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React from 'react';
 
 const Form = () => {
-    const navigate = useNavigate();
   return (
-    <div >
-        <Link id="form-link" to={'/form'}>form</Link>
-      <Link id="form-ref-link" to={'/form-ref'}>formRef</Link>
-      <Link id="form-state-link" to={'/form-state'}>formState</Link>
-        <form id="info-form">
-            <input type="text" id="full_name" placeholder='Full Name' />
-            <input type="email" id="email" placeholder='Email'/>
-            <input type="password" id="password" placeholder='Password' />
-            <input type="password" id="password_confirmation" placeholder='Password Confirmation' />
-            <button type='submit' onClick={()=>navigate('/form-ref')}>Submit</button>
-        </form>
-    </div>
-  )
-}
+    <form id="info-form">
+      <label htmlFor="full_name">Full Name:</label>
+      <input id="full_name" type="text" />
 
-export default Form
+      <label htmlFor="email">Email:</label>
+      <input id="email" type="email" />
+
+      <label htmlFor="password">Password:</label>
+      <input id="password" type="password" />
+
+      <label htmlFor="password_confirmation">Confirm Password:</label>
+      <input id="password_confirmation" type="password" />
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default Form;
