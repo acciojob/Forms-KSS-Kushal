@@ -15,7 +15,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Form />} />
-          <Route path="/formRef" element={<FormRef />} />
+          <Route path="/form" element={<FormRef />} />
           <Route path="/formState" element={<FormState />} />
         </Routes>
       </BrowserRouter>

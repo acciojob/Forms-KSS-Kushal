@@ -3,7 +3,7 @@ import React from 'react'
 const Form = () => {
   return (
     <div id='form-link'>
-        <form action="" id="info-form">
+        <form action="/form" id="info-form">
             <input type="text" id="full_name" placeholder='Full Name' />
             <input type="email" id="email" placeholder='Email'/>
             <input type="password" id="password" placeholder='Password' />
