@@ -18,7 +18,6 @@ const App = () => {
             <input type="email" id="email" placeholder='Email'/>
             <input type="password" id="password" placeholder='Password' />
             <input type="password" id="password_confirmation" placeholder='Password Confirmation' />
-            <button type='submit' onClick={()=>navigate('/form-ref')}>Submit</button>
         </form>
       <BrowserRouter>
         <Routes>            
