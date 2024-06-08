@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Form from "./Form";
 import FormRef from "./FormRef";
 import FormState from "./FormState";
@@ -12,10 +12,13 @@ const App = () => {
         Now I can render any React component on any DOM node I want using
         ReactDOM.render
       </p>
+      <Link id="form-link" to={'/form'}>form</Link>
+      <Link id="form-ref-link" to={'/formRef'}>formRef</Link>
+      <Link id="form-state-link" to={'/formState'}>formState</Link>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Form />} />
-          <Route path="/form" element={<FormRef />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/formRef" element={<FormRef />} />
           <Route path="/formState" element={<FormState />} />
         </Routes>
       </BrowserRouter>
