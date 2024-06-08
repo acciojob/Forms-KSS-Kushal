@@ -13,7 +13,7 @@ const App = () => {
         Now I can render any React component on any DOM node I want using
         ReactDOM.render
       </p>
-      
+      <div id="full_name"></div>
       <BrowserRouter>
         <Routes>            
           <Route path="/" element={<Card />} />
